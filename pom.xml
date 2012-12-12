@@ -1,19 +1,41 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>tw.cheyingwu.ckip</groupId>
+	<groupId>tw.cheyingwu</groupId>
 	<artifactId>CKIPClient</artifactId>
 	<packaging>jar</packaging>
-	<version>0.4.2-SNAPSHOT</version>
+	<version>0.4.3-SNAPSHOT</version>
 	<name>CKIPClient</name>
 	<description>CKIP 是中研院詞庫小組開發的中文斷詞系統，此系統採用線上服務模式，採用 TCP Scoket 傳送文本到 Server 進行斷詞，再接收斷詞結果。
 
 此專案是將上述斷詞流程採用不同程式語言實作，提供使用者方便的使用 CKIP 服務。本人並非中研院成員或是詞庫小組相關人士，本人只是將之前撰寫的 Client 端程式碼公開，並嘗試以不同的程式語言實做。所有中文斷詞相關技術及問題請洽中研院詞庫小組。
 
 CKIP Client 採用 BSD License 釋出</description>
-	<url>http://ckipclient.sourceforge.net/</url>
+	<url>https://github.com/onlinemad/ckipclient-java</url>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
 	<developers>
+		<developer>
+			<id>onlinemad</id>
+			<name>Ian Wu</name>
+			<email>onlinemad@gmail.com</email>
+		</developer>
 	</developers>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<connection>scm:git:git@github.com:onlinemad/ckipclient-java.git</connection>
+		<developerConnection>scm:git:git@github.com:onlinemad/ckipclient-java.git</developerConnection>
+		<url>git@github.com:onlinemad/ckipclient-java.git</url>
+	</scm>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
