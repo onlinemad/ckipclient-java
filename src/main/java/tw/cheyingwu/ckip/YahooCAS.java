@@ -19,8 +19,14 @@ import org.dom4j.Element;
 
 /**
  * Yahoo 斷章取義  API<br/>
+ * 
+ * DEPRECATED
+ * 
+ * Will delete at next release.
+ * 
  * @author onlinemad
  * @version 0.4
+ * @deprecated
  */
 public class YahooCAS extends WordSegmentationService{
 	private String appid;
