@@ -10,7 +10,7 @@
 
 此專案是將上述斷詞流程採用不同程式語言實作，提供使用者方便的使用 CKIP 服務。本人並非中研院成員或是詞庫小組相關人士，本人只是將之前撰寫的 Client 端程式碼公開，並嘗試以不同的程式語言實做。所有中文斷詞相關技術及問題請洽中研院詞庫小組。
 
-CKIP Client 採用 BSD License 釋出</description>
+CKIP Client 採用 Apache License 2.0 釋出</description>
 	<url>https://github.com/onlinemad/ckipclient-java</url>
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
