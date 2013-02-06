@@ -3,7 +3,7 @@
 	<groupId>tw.cheyingwu</groupId>
 	<artifactId>CKIPClient</artifactId>
 	<packaging>jar</packaging>
-	<version>0.4.3</version>
+	<version>0.5-SNAPSHOT</version>
 	<name>CKIPClient</name>
 	<description>The CKIP (Chinese Knowledge and Information Processing) is a online service for separate Chinese sentence. The service maintain by [CKIP group](http://godel.iis.sinica.edu.tw/CKIP/) in [Sinica](http://www.sinica.edu.tw).
 
