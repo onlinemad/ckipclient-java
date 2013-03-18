@@ -6,14 +6,16 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
-import tw.cheyingwu.ckip.Term;
-
 public class CKIPMessageHelper {
+	static Logger logger = LogManager.getLogger(CKIPMessageHelper.class.getName());
+	
 	public static String warp(String username, String password, String text) {
 		// create XML format message
 		Document d = DocumentHelper.createDocument();
@@ -24,15 +26,15 @@ public class CKIPMessageHelper {
 		root.addElement("authentication").addAttribute("username", username)
 										 .addAttribute("password", password);
 		root.addElement("text").addText(text);
-		
+		logger.debug("warped message: " + d.asXML());
 		return d.asXML();
 	}
 	
-	public static List<String> parse(String returnMsg){
+	public static List<String> parse(String ckipXMLMsg){
 		List<String> wordList = new ArrayList<String>();
 		try {
 
-			Document d = DocumentHelper.parseText(returnMsg);
+			Document d = DocumentHelper.parseText(ckipXMLMsg);
 			Element root = d.getRootElement();
 			Element n;
 
@@ -50,6 +52,7 @@ public class CKIPMessageHelper {
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		}
+		logger.debug("parsed word list: " + wordList);
 		return wordList;
 	}
 	

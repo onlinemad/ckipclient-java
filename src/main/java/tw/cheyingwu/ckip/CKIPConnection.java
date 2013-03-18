@@ -9,11 +9,12 @@ import java.io.UnsupportedEncodingException;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import javax.net.SocketFactory;
-
-import tw.cheyingwu.ckip.util.CKIPMessageHelper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CKIPConnection {
+	static Logger logger = LogManager.getLogger(CKIPConnection.class.getName());
+	
 	private String ip;
 	private int port;
 	
@@ -31,6 +32,7 @@ public class CKIPConnection {
 			socket = new Socket(this.ip, this.port);
 			writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "Big5"));
 			reader = new BufferedReader(new InputStreamReader(socket.getInputStream(), "Big5"));
+			logger.info("connected to: " + this.ip + ":" + this.port);
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,10 +48,10 @@ public class CKIPConnection {
 			
 			writer.println(ckipMsg);
 			writer.flush();
-	
+			logger.info("send the message to ckip server.");
 			// get return text
 			returnMsg = reader.readLine();
-	
+			logger.debug("the return message: " + returnMsg);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -65,6 +67,7 @@ public class CKIPConnection {
 			writer.close();
 			reader.close();
 			socket.close();
+			logger.info("connection closed.");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
